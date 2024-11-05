@@ -1,1 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image Upload</title>
+</head>
+<body>
+  <h1>Upload a new Image</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+  </form>
+  {% if filename %}
+    <h2>Uploaded Image:</h2>
+    <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Uploaded Image">
+  {% endif %}
+</body>
+</html>
 
